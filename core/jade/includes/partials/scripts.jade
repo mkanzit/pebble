@@ -1,0 +1,5 @@
+each script, i in vendor_scripts
+	script(src='#{paths.scripts.vendor}/#{vendor_scripts[i]}.js')
+block custom-scripts
+	each script, i in local_scripts
+		script(src='#{paths.scripts.local}/#{local_scripts[i]}.js')

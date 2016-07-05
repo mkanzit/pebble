@@ -1,0 +1,5 @@
+each style, i in vendor_styles
+	link(rel='stylesheet' href='#{paths.styles.vendor}/#{vendor_styles[i]}.css')
+block custom-styles
+	each style, i in local_styles
+		link(rel='stylesheet' href='#{paths.styles.local}/#{local_styles[i]}.css')

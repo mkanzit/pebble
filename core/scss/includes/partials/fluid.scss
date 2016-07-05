@@ -1,0 +1,49 @@
+/* Fluid typography / grid */
+
+// Desktop
+$desktop-start: 1600px;
+$desktop-end	: 1025px;
+
+// Tablet
+$tablet-start	: 1024px;
+$tablet-end		: 769px;
+
+// Mobile
+$mobile-start	: 768px;
+$mobile-end		: 320px;
+
+// Change ratio
+$desktop-ratio: 100/$desktop-start;
+$tablet-ratio	: 100/$tablet-start;
+$mobile-ratio	: 100/$mobile-start;
+
+
+@mixin fluid(){
+	html{ font-size: 100px; }
+
+	// Desktop
+	@for $i from $desktop-start through $desktop-end {
+		@media screen and (max-width: #{$i}){
+			html{ font-size: #{$i * $desktop-ratio}px; }
+		}
+	}
+
+	// Tablet
+	@for $i from $tablet-start through $tablet-end {
+		@media screen and (max-width: #{$i}){
+			html{ font-size: #{$i * $tablet-ratio}px; }
+		}
+	}
+
+	// Mobile
+	@for $i from $mobile-start through $mobile-end {
+		@media screen and (max-width: #{$i}){
+			html{
+				font-size: #{$i * $mobile-ratio}px;
+			}
+		}
+	}
+}
+
+
+@include fluid();

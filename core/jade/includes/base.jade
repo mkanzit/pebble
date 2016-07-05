@@ -1,0 +1,18 @@
+//- Base template which contains the basic
+//- structrue which all pages inherit from
+
+include ./config/vars.jade
+
+//- Base template start
+include ./partials/header.jade
+
+			div.container
+				// CONTENT START
+				block content
+				// CONTENT END
+
+			block footer
+				include ./partials/footer.jade
+
+		block scripts
+			include ./partials/scripts.jade
